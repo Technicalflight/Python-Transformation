@@ -102,6 +102,24 @@ def svg_to_pdf():
     renderPDF.drawToFile(drawing, pdf + '.pdf')
 
 
+#pdf to word
+def pdf_to_word():
+    print('此方法生成的word含有水印，请自行删除')
+    pdf = input("请输入pdf文件的路径:")
+    word = input("请输入保存为word格式的文件名:")
+    doc = aw.Document(pdf)
+    doc.save(word + ".docx")
+
+#word to pdf
+def word_to_pdf():
+    print('此方法生成的pdf含有水印，请自行删除')
+    word = input("请输入word文件的路径:")
+    pdf = input("请输入保存为pdf格式的文件名:")
+    doc = aw.Document(word)
+    doc.save(pdf + ".pdf")
+
+
+
 
 
 
@@ -118,7 +136,9 @@ if __name__ == '__main__':
                             4.jpg to svg
                             5.pdf to svg
                             6.svg to pdf
-                            7.exit
+                            7.pdf to word
+                            8.word to pdf
+                            9.exit
                   .-~~~~~~~~~-._       _.-~~~~~~~~~-.
               __.'              ~.   .~              `.__
             .'//                  \./                  \\`.
@@ -159,5 +179,15 @@ if __name__ == '__main__':
             print('按任意键返回操作菜单')
             input()
         elif cz == '7':
+            pdf_to_word()
+            print("word已保存")
+            print('按任意键返回操作菜单')
+            input()
+        elif cz == '8':
+            word_to_pdf()
+            print("pdf已保存")
+            print('按任意键返回操作菜单')
+            input()
+        elif cz == '9':
             print("退出")
             break
